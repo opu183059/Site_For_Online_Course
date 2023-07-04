@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const [isActive, setActive] = useState("false");
 
@@ -36,8 +37,8 @@ const Navbar = () => {
             <div className="flex space-x-4">
               {/* <!-- logo --> */}
               <div>
-                <a
-                  href="#"
+                <Link
+                  to={"/"}
                   className="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900"
                 >
                   <svg
@@ -55,7 +56,7 @@ const Navbar = () => {
                     />
                   </svg>
                   <span className="font-bold">COURSERA</span>
-                </a>
+                </Link>
               </div>
 
               {/* <!-- primary nav --> */}
@@ -109,15 +110,15 @@ const Navbar = () => {
                 />
               </div>
               <AiOutlineShoppingCart size={35}></AiOutlineShoppingCart>
-              <a href="" className="py-5 px-3">
+              <Link to={"/login"} className="py-5 px-3">
                 Login
-              </a>
-              <a
-                href=""
+              </Link>
+              <Link
+                to={"/signup"}
                 className="py-2 px-3 bg-yellow-400 hover:bg-yellow-300 text-yellow-900 hover:text-yellow-800 rounded transition duration-300"
               >
                 Signup
-              </a>
+              </Link>
             </div>
 
             {/* <!-- mobile button goes here --> */}
