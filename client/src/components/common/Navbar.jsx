@@ -10,28 +10,7 @@ const Navbar = () => {
 
   return (
     <div>
-      {/* <div className="fixed 10/12">
-        <nav className="max-w-7xl bg-slate-500 mx-auto flex justify-between">
-          <div className="left flex">
-            <h1>Logo</h1>
-            <a href="#" className="mx-3">
-              Categories
-            </a>
-            <a href="#" className="mx-3">
-              Business
-            </a>
-            <a href="#" className="mx-3">
-              teach
-            </a>
-          </div>
-          <div className="right">
-            <button>Login</button>
-            <button>Registration</button>
-          </div>
-        </nav>
-      </div> */}
-
-      <nav className="bg-gray-100">
+      <nav className="bg-gray-100 fixed w-full z-50 shadow-md">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-between">
             <div className="flex space-x-4">

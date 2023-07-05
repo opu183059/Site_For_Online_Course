@@ -37,7 +37,7 @@ const Banner = () => {
     ]
   );
   return (
-    <div className="z-10">
+    <div className="z-10 pt-16">
       <div ref={sliderRef} className="keen-slider">
         <div className="keen-slider__slide number-slide1 h-[390px]">
           <div className="flex h-full items-center b1">
