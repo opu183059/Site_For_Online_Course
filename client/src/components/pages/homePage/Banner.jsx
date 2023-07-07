@@ -1,5 +1,6 @@
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
+import { Link } from "react-router-dom";
 const Banner = () => {
   const [sliderRef] = useKeenSlider(
     {
@@ -47,9 +48,12 @@ const Banner = () => {
                 Leading Up With Better Dev can help you work, lead, and live
                 differently. New episode every Wednesday.
               </p>
-              <button className="btn px-4 py-2 bg-indigo-300 rounded-lg">
+              <Link
+                to={"/bannerdetails"}
+                className="btn px-4 py-2 bg-indigo-300 rounded-lg"
+              >
                 Learn More
-              </button>
+              </Link>
             </div>
             <div className="right md:w-1/2"></div>
           </div>
@@ -62,9 +66,12 @@ const Banner = () => {
                 See why leading organizations choose to learn with Better Dev
                 Business.
               </p>
-              <button className="btn px-4 py-2 bg-indigo-300 rounded-lg">
+              <Link
+                to={"/bannerdetails"}
+                className="btn px-4 py-2 bg-indigo-300 rounded-lg"
+              >
                 Learn More
-              </button>
+              </Link>
             </div>
             <div className="right md:w-1/2"></div>
           </div>
@@ -77,9 +84,12 @@ const Banner = () => {
                 Leading Up With Better Dev can help you work, lead, and live
                 differently. New episode every Wednesday.
               </p>
-              <button className="btn px-4 py-2 bg-indigo-300 rounded-lg">
+              <Link
+                to={"/bannerdetails"}
+                className="btn px-4 py-2 bg-indigo-300 rounded-lg"
+              >
                 Learn More
-              </button>
+              </Link>
             </div>
             <div className="right md:w-1/2"></div>
           </div>

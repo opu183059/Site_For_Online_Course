@@ -36,12 +36,15 @@ const Authprovider = ({ children }) => {
     };
   }, []);
 
+  const role = "Student";
+  // const role = "Admin";
   const firebaseData = {
     userRegistration,
     userSignOut,
     userLogin,
     user,
     loading,
+    role,
   };
   return (
     <Authcontext.Provider value={firebaseData}>{children}</Authcontext.Provider>

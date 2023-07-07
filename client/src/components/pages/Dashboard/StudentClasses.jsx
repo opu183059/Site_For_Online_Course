@@ -12,6 +12,7 @@ const StudentClasses = () => {
                 <th className="p-3">Date</th>
                 <th className="p-3">Course Fee</th>
                 <th className="p-3">Status</th>
+                <th className="p-3">Delete</th>
               </tr>
             </thead>
             <tbody>
@@ -39,6 +40,11 @@ const StudentClasses = () => {
                     <span>Pay</span>
                   </span>
                 </td>
+                <td className="p-3">
+                  <span className=" cursor-pointer px-3 py-1 font-semibold rounded-md dark:bg-red-400 dark:text-gray-950 hover:bg-red-800 hover:text-gray-300">
+                    <span>Delete</span>
+                  </span>
+                </td>
               </tr>
               <tr className="border-b border-opacity-20 dark:border-gray-700 dark:bg-gray-900">
                 <td className="p-3">
@@ -62,6 +68,11 @@ const StudentClasses = () => {
                 <td className="p-3 ">
                   <span className=" cursor-pointer px-3 py-1 font-semibold rounded-md dark:bg-blue-400 dark:text-gray-900">
                     <span>Pay</span>
+                  </span>
+                </td>
+                <td className="p-3 ">
+                  <span className=" cursor-pointer px-3 py-1 font-semibold rounded-md dark:bg-red-400 dark:text-gray-950 hover:bg-red-800 hover:text-gray-300">
+                    <span>Delete</span>
                   </span>
                 </td>
               </tr>
@@ -89,6 +100,11 @@ const StudentClasses = () => {
                     <span>Pay</span>
                   </span>
                 </td>
+                <td className="p-3 ">
+                  <span className=" cursor-pointer px-3 py-1 font-semibold rounded-md dark:bg-red-400 dark:text-gray-950 hover:bg-red-800 hover:text-gray-300">
+                    <span>Delete</span>
+                  </span>
+                </td>
               </tr>
               <tr className="border-b border-opacity-20 dark:border-gray-700 dark:bg-gray-900">
                 <td className="p-3">
@@ -111,6 +127,11 @@ const StudentClasses = () => {
                 <td className="p-3 ">
                   <span className=" cursor-pointer px-3 py-1 font-semibold rounded-md dark:bg-blue-400 dark:text-gray-900">
                     <span>Pay</span>
+                  </span>
+                </td>
+                <td className="p-3 ">
+                  <span className=" cursor-pointer px-3 py-1 font-semibold rounded-md dark:bg-red-400 dark:text-gray-950 hover:bg-red-800 hover:text-gray-300">
+                    <span>Delete</span>
                   </span>
                 </td>
               </tr>

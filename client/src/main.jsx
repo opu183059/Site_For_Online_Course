@@ -11,6 +11,9 @@ import CourseDetailsPage from "./components/pages/homePage/Classes/CourseDetails
 import MainDashboard from "./components/pages/Dashboard/MainDashboard.jsx";
 import Profile from "./components/pages/Dashboard/Profile.jsx";
 import StudentClasses from "./components/pages/Dashboard/StudentClasses.jsx";
+import DashboardHome from "./components/pages/Dashboard/DashboardHome.jsx";
+import FirstBanner from "./components/pages/homePage/BannerDetails/FirstBanner.jsx";
+import AdminManageClasses from "./components/pages/Dashboard/AdminManageClasses.jsx";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/bannerdetails",
+        element: <FirstBanner></FirstBanner>,
       },
       {
         path: "/signup",
@@ -41,11 +48,19 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard",
+        element: <DashboardHome></DashboardHome>,
+      },
+      {
+        path: "/dashboard/profile",
         element: <Profile></Profile>,
       },
       {
         path: "/dashboard/StudentClass",
         element: <StudentClasses></StudentClasses>,
+      },
+      {
+        path: "/dashboard/ManageAllClasses",
+        element: <AdminManageClasses></AdminManageClasses>,
       },
     ],
   },

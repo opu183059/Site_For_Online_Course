@@ -117,7 +117,7 @@ const Contact = () => {
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
           >
-            Sign In
+            Message
           </Button>
         </form>
       </div>

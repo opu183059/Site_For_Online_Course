@@ -2,16 +2,38 @@ import { FaChalkboardTeacher } from "react-icons/fa";
 
 import { SiGoogleclassroom } from "react-icons/si";
 import { GrCertificate } from "react-icons/gr";
+import { useContext } from "react";
+import { Authcontext } from "../../../provider/Authprovider";
+import Swal from "sweetalert2";
 
+const save = () => {
+  Swal.fire({
+    title: "Do you want to save the changes?",
+    showDenyButton: true,
+    showCancelButton: true,
+    confirmButtonText: "Save",
+    denyButtonText: `Don't save`,
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire("Saved!", "", "success");
+    } else if (result.isDenied) {
+      Swal.fire("Changes are not saved", "", "info");
+    }
+  });
+};
 const Profile = () => {
+  const { role } = useContext(Authcontext);
   return (
     <div className="ml-4">
-      <div className="bg-gray-100 shadow-xl -mt-1 rounded-xl p-5 flex gap-8">
+      <div className="bg-gray-100 overflow-hidden shadow-xl relative -mt-1 rounded-xl p-5 flex gap-8">
         <img
           src="https://i.ibb.co/ZS3N2jJ/OIP-3.jpg"
           alt=""
           className="rounded-xl w-80 max-h-80"
         />
+        <div className="absolute -right-5 top-3 shadow-lg shadow-blue-400 hover:shadow-blue-500 cursor-default bg-blue-600 w-32 rotate-[35deg] text-gray-100">
+          <p>{role}</p>
+        </div>
         <div className="text-left text-xl flex flex-col justify-center">
           <p className="mb-2">
             <span className="text-blue-800 font-semibold">Name:</span> Asif uz
@@ -38,43 +60,45 @@ const Profile = () => {
           </p>
         </div>
       </div>
-      <div className="mt-8">
-        <div className="md:flex mx-auto justify-between">
-          <div className="flex gap-5 bg-blue-600/10 shadow-lg hover:shadow-md items-center cursor-pointer p-10 rounded-lg transition-all duration-300 group">
-            <div className="group-hover:rotate-[360deg] duration-500">
-              <SiGoogleclassroom size={35}></SiGoogleclassroom>
+      {role == "student" && (
+        <div className="mt-8">
+          <div className="md:flex mx-auto justify-between">
+            <div className="flex gap-5 bg-blue-600/10 shadow-lg hover:shadow-md items-center cursor-pointer p-10 rounded-lg transition-all duration-300 group">
+              <div className="group-hover:rotate-[360deg] duration-500">
+                <SiGoogleclassroom size={35}></SiGoogleclassroom>
+              </div>
+              <div className="text-left flex gap-3 items-center">
+                <h1 className="text-indigo-600 text-5xl font-extrabold">10</h1>
+                <p className="text-sm">
+                  Courses <br /> Completed
+                </p>
+              </div>
             </div>
-            <div className="text-left flex gap-3 items-center">
-              <h1 className="text-indigo-600 text-5xl font-extrabold">10</h1>
-              <p className="text-sm">
-                Courses <br /> Completed
-              </p>
+            <div className="flex gap-5 items-center bg-blue-600/10 shadow-lg hover:shadow-md cursor-pointer p-10 rounded-lg transition-all duration-300 group">
+              <div className="group-hover:rotate-[360deg] duration-500">
+                <FaChalkboardTeacher size={35}></FaChalkboardTeacher>
+              </div>
+              <div className="text-left flex gap-3 items-center">
+                <h1 className="text-indigo-600 text-5xl font-extrabold">17</h1>
+                <p className="text-sm">
+                  Assignments <br /> Done
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="flex gap-5 items-center bg-blue-600/10 shadow-lg hover:shadow-md cursor-pointer p-10 rounded-lg transition-all duration-300 group">
-            <div className="group-hover:rotate-[360deg] duration-500">
-              <FaChalkboardTeacher size={35}></FaChalkboardTeacher>
-            </div>
-            <div className="text-left flex gap-3 items-center">
-              <h1 className="text-indigo-600 text-5xl font-extrabold">17</h1>
-              <p className="text-sm">
-                Assignments <br /> Done
-              </p>
-            </div>
-          </div>
-          <div className="flex gap-5 items-center bg-blue-600/10 shadow-lg hover:shadow-md cursor-pointer p-10 rounded-lg transition-all duration-300 group">
-            <div className="group-hover:rotate-[360deg] duration-500">
-              <GrCertificate size={35}></GrCertificate>
-            </div>
-            <div className="text-left flex gap-3 items-center">
-              <h1 className="text-indigo-600 text-5xl font-extrabold">25</h1>
-              <p className="text-sm">
-                Certificates <br /> Earned
-              </p>
+            <div className="flex gap-5 items-center bg-blue-600/10 shadow-lg hover:shadow-md cursor-pointer p-10 rounded-lg transition-all duration-300 group">
+              <div className="group-hover:rotate-[360deg] duration-500">
+                <GrCertificate size={35}></GrCertificate>
+              </div>
+              <div className="text-left flex gap-3 items-center">
+                <h1 className="text-indigo-600 text-5xl font-extrabold">25</h1>
+                <p className="text-sm">
+                  Certificates <br /> Earned
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
       <div className="bg-gray-100 shadow-xl mt-8 rounded-xl text-left">
         <form
           action=""
@@ -159,10 +183,11 @@ const Profile = () => {
                   className="h-9 ps-3 w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400 dark:border-gray-700 dark:text-gray-900"
                 />
               </div>
-              <div className="col-span-full w-full text-right mt-3">
+              <div className="col-span-full w-full text-left mt-3">
                 <input
+                  onClick={save}
                   type="submit"
-                  value="Save"
+                  value="Save Changes"
                   className="py-2 cursor-pointer px-3 bg-blue-500 text-white rounded transition duration-300"
                 />
               </div>

@@ -45,14 +45,14 @@ const Python = () => {
   return (
     <div>
       <h1 className="text-2xl mb-2">
-        Grow your software development skills with JavaScript
+        Expand your career opportunities with Python
       </h1>
       <p className="mb-4">
-        JavaScript is a text-based computer programming language used to make
-        dynamic web pages. A must-learn for aspiring web developers or
-        programmers, JavaScript can be used for features like image carousels,
-        displaying countdowns and timers, and playing media on a webpage. With
-        JavaScript online classes, you can learn to build
+        Take one of Udemy’s range of Python courses and learn how to code using
+        this incredibly useful language. Its simple syntax and readability makes
+        Python perfect for Flask, Django, data science, and machine learning.
+        You’ll learn how to build everything from games to sites to apps. Choose
+        from a range of courses that will appeal to
       </p>
 
       <Link variant="outlined" color="success" size="small">

@@ -45,14 +45,13 @@ const React = () => {
   return (
     <div>
       <h1 className="text-2xl mb-2">
-        Grow your software development skills with JavaScript
+        Grow your Web Development development skills with React
       </h1>
       <p className="mb-4">
-        JavaScript is a text-based computer programming language used to make
-        dynamic web pages. A must-learn for aspiring web developers or
-        programmers, JavaScript can be used for features like image carousels,
-        displaying countdowns and timers, and playing media on a webpage. With
-        JavaScript online classes, you can learn to build
+        The world of web development is as wide as the internet itself. Much of
+        our social and vocational lives play out on the internet, which prompts
+        new industries aimed at creating, managing, and debugging the websites
+        and applications that we increasingly rely on.
       </p>
 
       <Button variant="outlined" color="success" size="small">
