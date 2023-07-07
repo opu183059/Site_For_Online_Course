@@ -1,11 +1,11 @@
 import { useKeenSlider } from "keen-slider/react";
-import { Button } from "@mui/material";
 import "keen-slider/keen-slider.min.css";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
 const Python = () => {
   const [sliderRef] = useKeenSlider(
     {
@@ -55,9 +55,9 @@ const Python = () => {
         JavaScript online classes, you can learn to build
       </p>
 
-      <Button variant="outlined" color="success" size="small">
+      <Link variant="outlined" color="success" size="small">
         Explore
-      </Button>
+      </Link>
       <div className="pythonSlider mt-8">
         <div ref={sliderRef} className="keen-slider">
           <div className="keen-slider__slide number-slide1 p-2">
@@ -81,8 +81,9 @@ const Python = () => {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size="small">Share</Button>
-                  <Button size="small">Learn More</Button>
+                  <Link to={"/courseDetailsPage"} size="small">
+                    Learn More
+                  </Link>
                 </CardActions>
               </Card>
               <Card sx={{ maxWidth: 345 }} className="shadow-xl">
@@ -104,8 +105,9 @@ const Python = () => {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size="small">Share</Button>
-                  <Button size="small">Learn More</Button>
+                  <Link to={"/courseDetailsPage"} size="small">
+                    Learn More
+                  </Link>
                 </CardActions>
               </Card>
               <Card sx={{ maxWidth: 345 }} className="shadow-xl">
@@ -127,8 +129,9 @@ const Python = () => {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size="small">Share</Button>
-                  <Button size="small">Learn More</Button>
+                  <Link to={"/courseDetailsPage"} size="small">
+                    Learn More
+                  </Link>
                 </CardActions>
               </Card>
               <Card sx={{ maxWidth: 345 }} className="shadow-xl">
@@ -150,8 +153,9 @@ const Python = () => {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size="small">Share</Button>
-                  <Button size="small">Learn More</Button>
+                  <Link to={"/courseDetailsPage"} size="small">
+                    Learn More
+                  </Link>
                 </CardActions>
               </Card>
             </div>
@@ -177,8 +181,9 @@ const Python = () => {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size="small">Share</Button>
-                  <Button size="small">Learn More</Button>
+                  <Link to={"/courseDetailsPage"} size="small">
+                    Learn More
+                  </Link>
                 </CardActions>
               </Card>
               <Card sx={{ maxWidth: 345 }} className="shadow-xl">
@@ -200,8 +205,9 @@ const Python = () => {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size="small">Share</Button>
-                  <Button size="small">Learn More</Button>
+                  <Link to={"/courseDetailsPage"} size="small">
+                    Learn More
+                  </Link>
                 </CardActions>
               </Card>
               <Card sx={{ maxWidth: 345 }} className="shadow-xl">
@@ -223,8 +229,9 @@ const Python = () => {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size="small">Share</Button>
-                  <Button size="small">Learn More</Button>
+                  <Link to={"/courseDetailsPage"} size="small">
+                    Learn More
+                  </Link>
                 </CardActions>
               </Card>
             </div>

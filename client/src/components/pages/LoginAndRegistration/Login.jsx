@@ -1,26 +1,43 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/no-unescaped-entities */
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Lottie from "lottie-react";
 import showAnimation from "../../../assets/Animation/login.json";
-import instructorImg from "../../../assets/img/guardian.png";
-import studentImg from "../../../assets/img/tutor.png";
+import { useContext, useEffect } from "react";
+import { Authcontext } from "../../../provider/Authprovider";
 
 const Login = () => {
+  const { userLogin, user } = useContext(Authcontext);
+  const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+    const email = data.get("email");
+    const password = data.get("password");
+
+    if (email && password) {
+      userLogin(email, password)
+        .then((result) => {
+          console.log(result.user);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   };
+
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [user]);
 
   return (
     <div className="pt-20 flex justify-center items-center bg-gray-100/50 pb-4">
@@ -28,16 +45,6 @@ const Login = () => {
         <Lottie animationData={showAnimation} loop={true} className="w-10/12" />
       </div>
       <div>
-        <div className="option flex justify-around">
-          <button className="px-4 py-2 border-2 border-blue-500/70 w-auto rounded-3xl flex items-center">
-            <img src={studentImg} alt="" className="w-10" />
-            <p>Student Login</p>
-          </button>
-          <button className="px-4 py-2 border-2 border-blue-500/70 w-auto rounded-3xl flex items-center">
-            <img src={instructorImg} alt="" className="w-10" />
-            <p>Instructor Login</p>
-          </button>
-        </div>
         <Container
           sx={{
             width: 550,

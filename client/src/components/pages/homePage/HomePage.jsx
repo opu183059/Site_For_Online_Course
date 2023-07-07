@@ -1,6 +1,7 @@
 import Banner from "./Banner";
 import Business from "./Business";
 import Classes from "./Classes";
+import Contact from "./Contact";
 import Instructor from "./Instructor";
 import Pricing from "./Pricing";
 import Review from "./Review";
@@ -16,6 +17,7 @@ const HomePage = () => {
       <Business></Business>
       <Instructor></Instructor>
       <Review></Review>
+      <Contact></Contact>
     </div>
   );
 };

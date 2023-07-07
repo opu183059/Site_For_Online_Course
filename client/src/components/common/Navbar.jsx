@@ -1,11 +1,23 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { Authcontext } from "../../provider/Authprovider";
 const Navbar = () => {
   const [isActive, setActive] = useState("false");
-
+  const { user, userSignOut } = useContext(Authcontext);
+  const navigate = useNavigate();
   const handleToggle = () => {
     setActive(!isActive);
+  };
+
+  const signOut = () => {
+    userSignOut()
+      .then(() => {
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -58,6 +70,12 @@ const Navbar = () => {
                 >
                   Teach
                 </a>
+                <Link
+                  to={"/dashboard"}
+                  className="py-5 px-3 text-gray-700 hover:text-gray-900"
+                >
+                  Dashboard
+                </Link>
               </div>
             </div>
 
@@ -89,15 +107,31 @@ const Navbar = () => {
                 />
               </div>
               <AiOutlineShoppingCart size={35}></AiOutlineShoppingCart>
-              <Link to={"/login"} className="py-5 px-3">
-                Login
-              </Link>
-              <Link
-                to={"/signup"}
-                className="py-2 px-3 bg-yellow-400 hover:bg-yellow-300 text-yellow-900 hover:text-yellow-800 rounded transition duration-300"
-              >
-                Signup
-              </Link>
+              {user ? (
+                <>
+                  <Link to={""} className="py-5 px-3">
+                    {user.displayName}
+                  </Link>
+                  <button
+                    onClick={signOut}
+                    className="py-2 px-3 bg-blue-500 text-white rounded transition duration-300"
+                  >
+                    Signout
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link to={"/login"} className="py-5 px-3">
+                    Login
+                  </Link>
+                  <Link
+                    to={"/signup"}
+                    className="py-2 px-3 bg-blue-500 text-white rounded transition duration-300"
+                  >
+                    Signup
+                  </Link>
+                </>
+              )}
             </div>
 
             {/* <!-- mobile button goes here --> */}

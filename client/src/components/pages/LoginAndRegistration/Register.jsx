@@ -1,32 +1,98 @@
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Lottie from "lottie-react";
 import showAnimation from "../../../assets/Animation/134945-zpunet-icon.json";
+import { useContext, useState } from "react";
+import instructorImg from "../../../assets/img/guardian.png";
+import studentImg from "../../../assets/img/tutor.png";
+import { Authcontext } from "../../../provider/Authprovider";
+import Swal from "sweetalert2";
+import { getAuth, updateProfile } from "firebase/auth";
 const Register = () => {
+  const auth = getAuth();
+  const { userRegistration, userSignOut } = useContext(Authcontext);
+  const [student, setStudent] = useState(true);
+  const [instructor, setInstructor] = useState(false);
+
+  const studentFunction = () => {
+    setStudent(true);
+    setInstructor(false);
+  };
+  const instructorFunction = () => {
+    setInstructor(true);
+    setStudent(false);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    const form = event.target;
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+    const email = data.get("email");
+    const name = data.get("name");
+    const password = data.get("password");
+    console.log(name);
+    if (email && password) {
+      userRegistration(email, password)
+        .then((result) => {
+          console.log(result.user);
+          Swal.fire({
+            icon: "success",
+            title: "Congratulations",
+            text: "Account Created Successfully goto login",
+          });
+          updateProfile(auth.currentUser, {
+            displayName: name,
+            // photoURL: photo,
+          })
+            .then(() => {})
+            .catch((error) => {
+              console.log(error);
+            });
+          form.reset();
+          userSignOut()
+            .then(() => {})
+            .catch((error) => {
+              console.log(error);
+            });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   };
+
   return (
-    <div className="pt-20 flex justify-center items-center">
+    <div className="pt-24 pb-10 flex justify-center items-center">
       <div>
         <Lottie animationData={showAnimation} loop={true} className="w-10/12" />
       </div>
       <div>
+        <div className="option flex justify-around">
+          <button
+            onClick={studentFunction}
+            className={` ${
+              student ? "bg-blue-500" : "bg-white"
+            } px-4 py-2 border-2 border-blue-500/70 w-auto rounded-2xl flex items-center flex-col`}
+          >
+            <img src={studentImg} alt="" className="w-10" />
+            <p>Student registration</p>
+          </button>
+          <button
+            onClick={instructorFunction}
+            className={`${
+              instructor ? "bg-blue-500" : "bg-white"
+            } px-4 py-2 border-2 border-blue-500/70 w-auto rounded-2xl flex items-center flex-col`}
+          >
+            <img src={instructorImg} alt="" className="w-10" />
+            <p>Instructor registration</p>
+          </button>
+        </div>
         <Container component="main" maxWidth="xs">
           <Box
             sx={{
@@ -35,12 +101,6 @@ const Register = () => {
               alignItems: "center",
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-              <LockOutlinedIcon />
-            </Avatar>
-            <Typography component="h1" variant="h5">
-              Sign up
-            </Typography>
             <Box
               component="form"
               noValidate
@@ -48,25 +108,14 @@ const Register = () => {
               sx={{ mt: 3 }}
             >
               <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    autoComplete="given-name"
-                    name="firstName"
-                    required
-                    fullWidth
-                    id="firstName"
-                    label="First Name"
-                    autoFocus
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={12}>
                   <TextField
                     required
                     fullWidth
-                    id="lastName"
-                    label="Last Name"
-                    name="lastName"
-                    autoComplete="family-name"
+                    id="name"
+                    label="Name"
+                    name="name"
+                    autoComplete="name"
                   />
                 </Grid>
                 <Grid item xs={12}>

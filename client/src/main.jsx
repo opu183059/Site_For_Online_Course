@@ -6,6 +6,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./components/pages/homePage/HomePage.jsx";
 import Login from "./components/pages/LoginAndRegistration/Login.jsx";
 import Register from "./components/pages/LoginAndRegistration/Register.jsx";
+import Authprovider from "./provider/Authprovider.jsx";
+import CourseDetailsPage from "./components/pages/homePage/Classes/CourseDetailsPage.jsx";
+import MainDashboard from "./components/pages/Dashboard/MainDashboard.jsx";
+import Profile from "./components/pages/Dashboard/Profile.jsx";
 
 const router = createBrowserRouter([
   {
@@ -24,11 +28,27 @@ const router = createBrowserRouter([
         path: "/signup",
         element: <Register></Register>,
       },
+      {
+        path: "/courseDetailsPage",
+        element: <CourseDetailsPage></CourseDetailsPage>,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <MainDashboard></MainDashboard>,
+    children: [
+      {
+        path: "/dashboard",
+        element: <Profile></Profile>,
+      },
     ],
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Authprovider>
+      <RouterProvider router={router} />
+    </Authprovider>
   </React.StrictMode>
 );
