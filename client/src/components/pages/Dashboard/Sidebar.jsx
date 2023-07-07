@@ -1,6 +1,7 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AiOutlineBars, AiOutlineHome } from "react-icons/ai";
 import { BiLogOutCircle } from "react-icons/bi";
+import { BsPersonVcard } from "react-icons/bs";
 import { LuFolderEdit } from "react-icons/lu";
 import { useContext, useState } from "react";
 import { Authcontext } from "../../../provider/Authprovider";
@@ -63,14 +64,14 @@ const Sidebar = () => {
           </div>
           <div>
             <NavLink
-              to="/dashboard/profile"
+              to="/dashboard"
               className={({ isActive }) =>
                 `flex items-center px-4 py-2 mt-5 hover:text-gray-50 transition-colors duration-300 transform  hover:bg-blue-800  rounded-lg ${
                   isActive ? "bg-blue-800  text-white" : " "
                 }`
               }
             >
-              <LuFolderEdit className="mr-4"></LuFolderEdit>
+              <BsPersonVcard className="mr-4"></BsPersonVcard>
               My profile
             </NavLink>
             <NavLink
@@ -89,14 +90,14 @@ const Sidebar = () => {
         <div>
           <Link
             to={"/"}
-            className="flex w-full items-center px-4 py-2 mt-5  hover:bg-blue-800   rounded-lg transition-colors duration-300 transform"
+            className="flex w-full items-center px-4 py-2 mt-5  hover:bg-blue-800 hover:text-gray-50 rounded-lg transition-colors duration-300 transform"
           >
             <AiOutlineHome></AiOutlineHome>
             <span className="mx-4 font-medium">Home</span>
           </Link>
           <button
             onClick={handleLogout}
-            className="flex w-full items-center px-4 py-2 mt-5 hover:bg-blue-800 rounded-lg transition-colors duration-300 transform "
+            className="flex w-full items-center px-4 py-2 mt-5 hover:bg-blue-800 hover:text-gray-50 rounded-lg transition-colors duration-300 transform "
           >
             <BiLogOutCircle></BiLogOutCircle>
             <span className="mx-4 font-medium">Logout</span>

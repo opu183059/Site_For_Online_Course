@@ -10,6 +10,7 @@ import Authprovider from "./provider/Authprovider.jsx";
 import CourseDetailsPage from "./components/pages/homePage/Classes/CourseDetailsPage.jsx";
 import MainDashboard from "./components/pages/Dashboard/MainDashboard.jsx";
 import Profile from "./components/pages/Dashboard/Profile.jsx";
+import StudentClasses from "./components/pages/Dashboard/StudentClasses.jsx";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <Profile></Profile>,
+      },
+      {
+        path: "/dashboard/StudentClass",
+        element: <StudentClasses></StudentClasses>,
       },
     ],
   },

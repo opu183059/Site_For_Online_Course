@@ -81,51 +81,72 @@ const Profile = () => {
           noValidate=""
           className="container flex flex-col mx-auto space-y-12 ng-untouched ng-pristine ng-valid"
         >
-          <h2 className="text-xl">Edit Your Profile</h2>
           <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm">
-            <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
+            <div className="grid grid-cols-6 gap-4 col-span-full">
+              <h2 className="text-xl text-blue-800 font-semibold">
+                Edit Your Profile
+              </h2>
               <div className="col-span-full">
                 <label htmlFor="firstname" className="text-sm">
-                  Toy name
+                  Name
                 </label>
                 <input
                   required
-                  id="toyname"
+                  id="name"
                   type="text"
-                  placeholder="Toy Name"
+                  placeholder="Akther uz zaman"
                   className="h-9 ps-3 w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400 dark:border-gray-700 dark:text-gray-900"
                 />
               </div>
               <div className="col-span-full sm:col-span-3">
-                <label htmlFor="sellerName" className="text-sm">
-                  Seller Name
+                <label htmlFor="sellerEmail" className="text-sm">
+                  Email
                 </label>
                 <input
                   readOnly
-                  id="sellerName"
-                  type="text"
-                  placeholder="Seller Name"
+                  id="Email"
+                  type="email"
+                  placeholder="asif@gmail.com"
                   className="w-full h-9 ps-3 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400 dark:border-gray-700 dark:text-gray-900"
                 />
               </div>
               <div className="col-span-full sm:col-span-3">
                 <label htmlFor="sellerEmail" className="text-sm">
-                  Seller Email
+                  Mobile
                 </label>
                 <input
                   readOnly
-                  id="sellerEmail"
-                  type="email"
-                  placeholder="Seller Email "
+                  id="mobile"
+                  type="text"
+                  placeholder="+880 154 5454 454"
                   className="w-full h-9 ps-3 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400 dark:border-gray-700 dark:text-gray-900"
                 />
               </div>
-              <div className="col-span-full -mt-3 text-sm">
-                <p>
-                  <span className="text-yellow-400">Note:</span> Seller name and
-                  email will be as your seller profile
-                </p>
+              <div className="col-span-full sm:col-span-3">
+                <label htmlFor="sellerEmail" className="text-sm">
+                  Degree
+                </label>
+                <input
+                  readOnly
+                  id="degree"
+                  type="text"
+                  placeholder="HSC"
+                  className="w-full h-9 ps-3 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400 dark:border-gray-700 dark:text-gray-900"
+                />
               </div>
+              <div className="col-span-full sm:col-span-3">
+                <label htmlFor="sellerEmail" className="text-sm">
+                  Institude
+                </label>
+                <input
+                  readOnly
+                  id="institude"
+                  type="text"
+                  placeholder="Chittagong College, Chittagong"
+                  className="w-full h-9 ps-3 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400 dark:border-gray-700 dark:text-gray-900"
+                />
+              </div>
+
               <div className="col-span-full">
                 <label htmlFor="photoURL" className="text-sm">
                   Photo URL
@@ -134,64 +155,15 @@ const Profile = () => {
                   required
                   id="photoURL"
                   type="text"
-                  placeholder="Give Photo URL"
+                  placeholder="Photo URL"
                   className="h-9 ps-3 w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400 dark:border-gray-700 dark:text-gray-900"
-                />
-              </div>
-
-              <div className="col-span-full sm:col-span-2">
-                <label htmlFor="Price" className="text-sm">
-                  Price
-                </label>
-                <input
-                  required
-                  id="Price"
-                  type="number"
-                  placeholder="Price"
-                  className="h-9 ps-3 w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400 dark:border-gray-700 dark:text-gray-900"
-                />
-              </div>
-              <div className="col-span-full sm:col-span-2">
-                <label htmlFor="Rating" className="text-sm">
-                  Rating
-                </label>
-                <input
-                  required
-                  id="Rating"
-                  type="text"
-                  placeholder="Ratings"
-                  className="h-9 ps-3 w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400 dark:border-gray-700 dark:text-gray-900"
-                />
-              </div>
-              <div className="col-span-full sm:col-span-2">
-                <label htmlFor="Available" className="text-sm">
-                  Available
-                </label>
-                <input
-                  required
-                  id="Available"
-                  type="number"
-                  placeholder="Total Available"
-                  className="h-9 ps-3 w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400 dark:border-gray-700 dark:text-gray-900"
-                />
-              </div>
-              <div className="col-span-full">
-                <label htmlFor="description" className="text-sm">
-                  Description
-                </label>
-                {/* <textarea className="textarea" placeholder="Details"></textarea> */}
-                <textarea
-                  required
-                  id="description"
-                  type="text"
-                  placeholder="Description"
-                  className="textarea w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400 dark:border-gray-700 dark:text-gray-900"
                 />
               </div>
               <div className="col-span-full w-full text-right mt-3">
                 <input
                   type="submit"
-                  className="btn bg-amber-600 border-0 text-white"
+                  value="Save"
+                  className="py-2 cursor-pointer px-3 bg-blue-500 text-white rounded transition duration-300"
                 />
               </div>
             </div>
