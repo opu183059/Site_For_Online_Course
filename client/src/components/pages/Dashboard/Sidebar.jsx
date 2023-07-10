@@ -3,6 +3,7 @@ import { AiOutlineBars, AiOutlineHome } from "react-icons/ai";
 import { BiLogOutCircle } from "react-icons/bi";
 import { BsPersonVcard } from "react-icons/bs";
 import { LuFolderEdit } from "react-icons/lu";
+import { RiCalendarTodoLine } from "react-icons/ri";
 import { useContext, useState } from "react";
 import { Authcontext } from "../../../provider/Authprovider";
 const Sidebar = () => {
@@ -57,12 +58,17 @@ const Sidebar = () => {
                   {/* {user?.displayName} */}
                   Asif uz zaman
                 </h4>
-                {role == "student" && (
+                {role == "Student" && (
                   <p className="mx-2 mt-1 cursor-default text-sm font-medium">
                     Student
                   </p>
                 )}
-                {role == "admin" && (
+                {role == "Instructor" && (
+                  <p className="mx-2 mt-1 cursor-default text-sm font-medium">
+                    Instructor
+                  </p>
+                )}
+                {role == "Admin" && (
                   <p className="mx-2 mt-1 cursor-default text-sm font-medium">
                     Admin
                   </p>
@@ -82,6 +88,43 @@ const Sidebar = () => {
               >
                 <BsPersonVcard className="mr-4"></BsPersonVcard>
                 My profile
+              </NavLink>
+              <NavLink
+                to="/dashboard/StudentClass"
+                className={({ isActive }) =>
+                  `flex items-center px-4 py-2 mt-5 hover:text-gray-50 transition-colors duration-300 transform  hover:bg-blue-800  rounded-lg ${
+                    isActive ? "bg-blue-800  text-white" : " "
+                  }`
+                }
+              >
+                <LuFolderEdit className="mr-4"></LuFolderEdit>
+                Manage Class
+              </NavLink>
+            </div>
+          )}
+          {role == "Instructor" && (
+            <div>
+              <NavLink
+                to="/dashboard/profile"
+                className={({ isActive }) =>
+                  `flex items-center px-4 py-2 mt-5 hover:text-gray-50 transition-colors duration-300 transform  hover:bg-blue-800  rounded-lg ${
+                    isActive ? "bg-blue-800  text-white" : " "
+                  }`
+                }
+              >
+                <BsPersonVcard className="mr-4"></BsPersonVcard>
+                My profile
+              </NavLink>
+              <NavLink
+                to="/dashboard/Appoinments"
+                className={({ isActive }) =>
+                  `flex items-center px-4 py-2 mt-5 hover:text-gray-50 transition-colors duration-300 transform  hover:bg-blue-800  rounded-lg ${
+                    isActive ? "bg-blue-800  text-white" : " "
+                  }`
+                }
+              >
+                <RiCalendarTodoLine className="mr-4"></RiCalendarTodoLine>
+                Appoinments
               </NavLink>
               <NavLink
                 to="/dashboard/StudentClass"

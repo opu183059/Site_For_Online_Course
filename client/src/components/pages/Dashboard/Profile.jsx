@@ -31,7 +31,7 @@ const Profile = () => {
           alt=""
           className="rounded-xl w-80 max-h-80"
         />
-        <div className="absolute -right-5 top-3 shadow-lg shadow-blue-400 hover:shadow-blue-500 cursor-default bg-blue-600 w-32 rotate-[35deg] text-gray-100">
+        <div className="absolute -left-5 top-4 shadow-lg shadow-blue-400 hover:shadow-blue-500 cursor-default bg-blue-600 w-32 rotate-[325deg] text-gray-100">
           <p>{role}</p>
         </div>
         <div className="text-left text-xl flex flex-col justify-center">
@@ -60,7 +60,7 @@ const Profile = () => {
           </p>
         </div>
       </div>
-      {role == "student" && (
+      {role == "Student" && (
         <div className="mt-8">
           <div className="md:flex mx-auto justify-between">
             <div className="flex gap-5 bg-blue-600/10 shadow-lg hover:shadow-md items-center cursor-pointer p-10 rounded-lg transition-all duration-300 group">

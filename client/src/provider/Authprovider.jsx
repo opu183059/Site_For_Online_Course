@@ -36,8 +36,9 @@ const Authprovider = ({ children }) => {
     };
   }, []);
 
-  const role = "Student";
+  // const role = "Student";
   // const role = "Admin";
+  const role = "Instructor";
   const firebaseData = {
     userRegistration,
     userSignOut,

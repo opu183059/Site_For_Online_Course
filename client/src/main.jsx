@@ -10,15 +10,18 @@ import Authprovider from "./provider/Authprovider.jsx";
 import CourseDetailsPage from "./components/pages/homePage/Classes/CourseDetailsPage.jsx";
 import MainDashboard from "./components/pages/Dashboard/MainDashboard.jsx";
 import Profile from "./components/pages/Dashboard/Profile.jsx";
-import StudentClasses from "./components/pages/Dashboard/StudentClasses.jsx";
+import StudentClasses from "./components/pages/Dashboard/Student/StudentClasses.jsx";
 import DashboardHome from "./components/pages/Dashboard/DashboardHome.jsx";
 import FirstBanner from "./components/pages/homePage/BannerDetails/FirstBanner.jsx";
-import AdminManageClasses from "./components/pages/Dashboard/AdminManageClasses.jsx";
+import AdminManageClasses from "./components/pages/Dashboard/Admin/AdminManageClasses.jsx";
+import ErrorPage from "./components/common/ErrorPage.jsx";
+import InstructorAppoinment from "./components/pages/Dashboard/Instructor/InstructorAppoinment.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -57,6 +60,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/StudentClass",
         element: <StudentClasses></StudentClasses>,
+      },
+      {
+        path: "/dashboard/Appoinments",
+        element: <InstructorAppoinment></InstructorAppoinment>,
       },
       {
         path: "/dashboard/ManageAllClasses",

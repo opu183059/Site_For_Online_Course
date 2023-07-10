@@ -14,18 +14,22 @@ import studentImg from "../../../assets/img/tutor.png";
 import { Authcontext } from "../../../provider/Authprovider";
 import Swal from "sweetalert2";
 import { getAuth, updateProfile } from "firebase/auth";
+import { saveUser } from "../../Function/function";
+
 const Register = () => {
   const auth = getAuth();
   const { userRegistration, userSignOut } = useContext(Authcontext);
   const [student, setStudent] = useState(true);
   const [instructor, setInstructor] = useState(false);
-
+  const [userRole, setUserRole] = useState("");
   const studentFunction = () => {
     setStudent(true);
+    setUserRole("Student");
     setInstructor(false);
   };
   const instructorFunction = () => {
     setInstructor(true);
+    setUserRole("Instructor");
     setStudent(false);
   };
 
@@ -36,6 +40,8 @@ const Register = () => {
     const email = data.get("email");
     const name = data.get("name");
     const password = data.get("password");
+    const role = userRole;
+    const userdata = { email, name, role };
     console.log(name);
     if (email && password) {
       userRegistration(email, password)
@@ -54,6 +60,7 @@ const Register = () => {
             .catch((error) => {
               console.log(error);
             });
+          saveUser(userdata);
           form.reset();
           userSignOut()
             .then(() => {})
