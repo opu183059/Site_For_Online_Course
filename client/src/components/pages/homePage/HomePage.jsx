@@ -6,6 +6,7 @@ import Instructor from "./Instructor";
 import Pricing from "./Pricing";
 import Review from "./Review";
 import Showcase from "./Showcase";
+import WorkingProcess from "./WorkingProcess";
 
 const HomePage = () => {
   return (
@@ -13,6 +14,7 @@ const HomePage = () => {
       <Banner></Banner>
       <Showcase></Showcase>
       <Classes></Classes>
+      <WorkingProcess></WorkingProcess>
       <Pricing></Pricing>
       <Business></Business>
       <Instructor></Instructor>

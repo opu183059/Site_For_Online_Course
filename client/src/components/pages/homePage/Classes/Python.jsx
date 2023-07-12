@@ -43,7 +43,7 @@ const Python = () => {
     ]
   );
   return (
-    <div>
+    <div className="text-center md:text-left">
       <h1 className="text-2xl mb-2">
         Expand your career opportunities with Python
       </h1>
@@ -55,7 +55,7 @@ const Python = () => {
         from a range of courses that will appeal to
       </p>
 
-      <Link variant="outlined" color="success" size="small">
+      <Link className="hover:bg-blue-600 transition-all duration-300 hover:text-white px-4 py-2 rounded-md border-[1px] border-blue-600">
         Explore
       </Link>
       <div className="pythonSlider mt-8">

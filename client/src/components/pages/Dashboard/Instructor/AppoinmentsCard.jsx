@@ -4,7 +4,7 @@ import { RxCross2 } from "react-icons/rx";
 
 const AppoinmentsCard = () => {
   return (
-    <div className="my-5 flex justify-between items-center shadow-lg hover:shadow-xl p-4 rounded-xl bg-slate-50">
+    <div className="my-5 md:flex justify-between items-center shadow-lg hover:shadow-xl p-4 rounded-xl bg-slate-50">
       <div className="left flex gap-4">
         <img
           src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
@@ -20,7 +20,7 @@ const AppoinmentsCard = () => {
           <p>+880 1245 154</p>
         </div>
       </div>
-      <div className="right">
+      <div className="right mt-4 md:mt-0">
         <div className="flex gap-4 font-medium">
           <button className="flex items-center gap-1 bg-teal-100 text-teal-600 px-3 py-1 rounded-md">
             <AiFillEye></AiFillEye> View

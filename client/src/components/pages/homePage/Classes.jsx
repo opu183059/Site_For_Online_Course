@@ -50,7 +50,7 @@ const Classes = () => {
   };
 
   return (
-    <div className="text-left pt-8 max-w-6xl mx-auto">
+    <div className="text-left p-3 md:p-0 pt-8 max-w-6xl mx-auto">
       <h1 className="text-4xl">A broad selection of courses</h1>
       <p className="text-lg mb-5">
         Choose from over 210,000 online video courses with new additions

@@ -18,7 +18,7 @@ const Banner = () => {
           if (mouseOver) return;
           timeout = setTimeout(() => {
             slider.next();
-          }, 1000);
+          }, 10000000);
         }
         slider.on("created", () => {
           slider.container.addEventListener("mouseover", () => {
@@ -42,7 +42,7 @@ const Banner = () => {
       <div ref={sliderRef} className="keen-slider">
         <div className="keen-slider__slide number-slide1 h-[390px]">
           <div className="flex h-full items-center b1">
-            <div className="left md:w-1/2 text-left ps-24">
+            <div className="left md:w-1/2 md:text-left md:ps-24 w-10/12 md:mx-0 mx-auto text-center">
               <h1 className="text-2xl">Check out our leadership podcast</h1>
               <p className="text-sm mb-5">
                 Leading Up With Better Dev can help you work, lead, and live
@@ -50,7 +50,7 @@ const Banner = () => {
               </p>
               <Link
                 to={"/bannerdetails"}
-                className="btn px-4 py-2 bg-indigo-300 rounded-lg"
+                className="hover:bg-blue-50 transition-all duration-300 hover:text-black px-4 py-2 rounded-md border-[1px] border-blue-600 bg-blue-500 text-white"
               >
                 Learn More
               </Link>
@@ -60,7 +60,7 @@ const Banner = () => {
         </div>
         <div className="keen-slider__slide number-slide2 h-[390px]">
           <div className="flex h-full items-center b2">
-            <div className="left md:w-1/2 text-left ps-24">
+            <div className="left md:w-1/2 md:text-left md:ps-24 w-10/12 md:mx-0 mx-auto text-center">
               <h1 className="text-2xl">Build ready-for-anything teams</h1>
               <p className="text-sm mb-5">
                 See why leading organizations choose to learn with Better Dev
@@ -78,7 +78,7 @@ const Banner = () => {
         </div>
         <div className="keen-slider__slide number-slide3 h-[390px]">
           <div className="flex h-full items-center b3">
-            <div className="left md:w-1/2 text-left ps-24">
+            <div className="left md:w-1/2 md:text-left md:ps-24 w-10/12 md:mx-0 mx-auto text-center">
               <h1 className="text-2xl">Check out our leadership podcast</h1>
               <p className="text-sm mb-5">
                 Leading Up With Better Dev can help you work, lead, and live

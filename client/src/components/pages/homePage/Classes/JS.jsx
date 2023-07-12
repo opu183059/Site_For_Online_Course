@@ -6,6 +6,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
 const JS = () => {
   const [sliderRef] = useKeenSlider(
     {
@@ -43,7 +44,7 @@ const JS = () => {
     ]
   );
   return (
-    <div>
+    <div className="text-center md:text-left">
       <h1 className="text-2xl mb-2">
         Grow your software development skills with JavaScript
       </h1>
@@ -55,9 +56,9 @@ const JS = () => {
         JavaScript online classes, you can learn to build
       </p>
 
-      <Button variant="outlined" color="success" size="small">
+      <Link className="hover:bg-blue-600 transition-all duration-300 hover:text-white px-4 py-2 rounded-md border-[1px] border-blue-600">
         Explore
-      </Button>
+      </Link>
       <div className="JavaScriptSlider mt-8">
         <div ref={sliderRef} className="keen-slider">
           <div className="keen-slider__slide number-slide1 p-2">

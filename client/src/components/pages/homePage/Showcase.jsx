@@ -15,7 +15,7 @@ const Showcase = () => {
           />
         </div>
         <div className="md:w-1/2 flex justify-center">
-          <div className="text pr-10">
+          <div className="text md:pr-10 p-3 md:p-0">
             <h1 className="text-4xl font-bold text-indigo-600 mb-4">
               Coursera
             </h1>
@@ -37,7 +37,7 @@ const Showcase = () => {
                   <p className="text-sm">Total Courses</p>
                 </div>
               </div>
-              <div className="flex gap-5 items-center cursor-pointer hover:shadow-md p-5 rounded-lg transition-all duration-300 group">
+              <div className="flex gap-5 items-center cursor-pointer hover:shadow-md p-5 rounded-lg transition-all duration-300 group md:my-0 my-4">
                 <div className="group-hover:rotate-[360deg] duration-500">
                   <FaChalkboardTeacher size={30}></FaChalkboardTeacher>
                 </div>
